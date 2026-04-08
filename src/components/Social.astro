@@ -1,0 +1,18 @@
+---
+const { platform, username } = Astro.props;
+
+const platformUrls: Record<string, string> = {
+  goodreads: `https://www.goodreads.com/user/show/187722680-${username}`,
+  rateyourmusic: `https://rateyourmusic.com/~${username}`,
+  reddit: `https://www.reddit.com/user/${username}`
+};
+---
+<a href={platformUrls[platform]} target="_blank">{platform}</a>
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+  }
+</style>
